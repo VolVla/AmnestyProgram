@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -36,7 +36,7 @@ namespace AmnestyProgram
         private string _crime = "Антиправительственное";
         private List<Criminal> _criminals;
 
-        public ProgramAmnesty() 
+        public ProgramAmnesty()
         {
             _criminals = new List<Criminal>
             {
@@ -48,18 +48,18 @@ namespace AmnestyProgram
             };
         }
 
-        public void AmnestyCriminal() 
+        public void AmnestyCriminal()
         {
-            Console.WriteLine("Преступники до амнистии"); 
-            ShowCriminal(_criminals);
+            Console.WriteLine("Преступники до амнистии");
+            ShowCriminals(_criminals);
             var filteredCriminal = _criminals.Where(criminal => criminal.Crime != _crime);
             _criminals = filteredCriminal.ToList();
             Console.WriteLine("\nВ нашей великой стране Арстоцка произошла амнистия!\nВсех людей, заключенных за преступление \"Антиправительственное\" освободили");
             Console.WriteLine("Оставшиеся преступники после амнистии");
-            ShowCriminal(_criminals);
+            ShowCriminals(_criminals);
         }
 
-        private void ShowCriminal(IEnumerable<Criminal> filteredCriminals)
+        private void ShowCriminals(IEnumerable<Criminal> filteredCriminals)
         {
             foreach (var criminal in filteredCriminals)
             {
@@ -70,7 +70,7 @@ namespace AmnestyProgram
 
     class Criminal
     {
-        public Criminal(string fullName,string crime) 
+        public Criminal(string fullName, string crime)
         {
             FullName = fullName;
             Crime = crime;
